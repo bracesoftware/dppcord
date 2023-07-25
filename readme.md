@@ -22,7 +22,7 @@ using.dppcord;
 ### Form: `discord_bot_send_message`
 - Equivalent to `DCC_SendChannelMessage` in Pawn.
 ```cpp
-discord.discord_bot_send_message(1234567890,"Message");
+dppcord.discord_bot_send_message(1234567890,"Message");
 ```
 
 ---------------------------------------------------------------------------------------------------------
@@ -36,7 +36,7 @@ using.dppcord;
 
 extern&struct*public.discord_init;
 {;
-	discord.discord_bot_send_message(1234567890,"Message");
+	dppcord.discord_bot_send_message(1234567890,"Message");
 	return.int,1;
 };
 ```

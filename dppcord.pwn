@@ -30,6 +30,8 @@ new
 #define dppcord_error%0(%1,%2) format(dpp_error_str,sizeof dpp_error_str,">> DPPcord | ERROR (dppcord.amx @ %s:%i): "%1,__file,__line,%2)&& \
     print(dpp_error_str)
 
+#define dppcord_info%0(%1) printf(">> DPPcord | INFO: "%1)
+
 new dppcord_isused = 0;
 
 // Used by DPPcord itself
@@ -75,6 +77,11 @@ stock bool:dpp_isnumeric(const str[]) // creds Y_Less
     }
 }
 
+public OnFilterScriptInit()
+{
+    dppcord_info("D++ library is being loaded.");
+    return 1;
+}
 
 forward dppcord_init();
 public dppcord_init()
@@ -83,6 +90,8 @@ public dppcord_init()
     {
         return 1;
     }
+
+    dppcord_info("D++ library loaded.");
 
     CallRemoteFunction("dpp_callform", "s", "discord_init");
 
@@ -106,6 +115,7 @@ public dppcord_codeprocess(funcgroup[][],args[][],args_const[][])
         if(!strcmp(funcgroup[1], "dppcord"))
         {
             dppcord_isused = 1;
+            dppcord_info("dppcord_codeprocess called");
             return 1;
         }
     }
@@ -115,8 +125,9 @@ public dppcord_codeprocess(funcgroup[][],args[][],args_const[][])
 forward dppcord_process(funcgroup[][],args[][],args_const[][]);
 public dppcord_process(funcgroup[][],args[][],args_const[][])
 {
-    if(!strcmp(funcgroup[0], "discord"))
+    if(!strcmp(funcgroup[0], "dppcord"))
     {
+        dppcord_info("dppcord_process called");
         if(dppcord_isused == 0)
         {
             dppcord_error("API \"dppcord\" is not imported.",);
