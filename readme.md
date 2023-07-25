@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" align="center" src="https://cdn.discordapp.com/attachments/1130879376423145522/1133479149290397716/dppcord_logo.png">
+  <img width="300" align="center" src="https://cdn.discordapp.com/attachments/1130879376423145522/1133479149290397716/dppcord_logo.png">
 </p>
 <h1 align = "center">Welcome to the <b>DPPcord</b> Wiki</h1>
 <h3 align = "center">
