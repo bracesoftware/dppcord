@@ -76,7 +76,8 @@ stock bool:dpp_isnumeric(const str[]) // creds Y_Less
 }
 
 
-public OnFilterScriptInit()
+forward dppcord_init();
+public dppcord_init()
 {
     if(dppcord_isused == 0)
     {
